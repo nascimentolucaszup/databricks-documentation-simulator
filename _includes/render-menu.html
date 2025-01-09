@@ -1,6 +1,6 @@
 {% for item in include.menu %}
   <li>
-    <a href="{{ item.url }}">{{ item.title }}</a>
+    <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
     {% if item.children %}
       <ul>
         {% include render-menu.html menu=item.children %}

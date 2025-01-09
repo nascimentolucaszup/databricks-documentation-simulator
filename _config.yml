@@ -1,6 +1,6 @@
 title: "Documentação"
 description: "Documentação oficial"
-baseurl: "/"
+baseurl: "/databricks-documentation-simulator"
 theme: minima
 markdown: kramdown
 permalink: pretty

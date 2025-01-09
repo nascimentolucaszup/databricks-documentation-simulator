@@ -3,22 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
+  <style>
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 5px 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #007BFF;
+    }
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+    nav ul ul {
+      margin-left: 20px;
+    }
+  </style>
 </head>
 <body>
   <nav>
     <ul>
-      {% for item in site.data.navigation %}
-        <li>
-          <a href="{{ item.url }}">{{ item.title }}</a>
-          {% if item.children %}
-            <ul>
-              {% for child in item.children %}
-                <li><a href="{{ child.url }}">{{ child.title }}</a></li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
+      {% assign render_menu = site.data.navigation %}
+      {% include render-menu.html menu=render_menu %}
     </ul>
   </nav>
   <main>

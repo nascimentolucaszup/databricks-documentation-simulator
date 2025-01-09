@@ -1,6 +1,6 @@
 title: "Documentação"
 description: "Documentação oficial"
-baseurl: "/index"
+baseurl: "/"
 theme: minima
 markdown: kramdown
 permalink: pretty

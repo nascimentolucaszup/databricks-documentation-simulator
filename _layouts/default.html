@@ -3,25 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
-  <style>
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 5px 0;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: #007BFF;
-    }
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-    nav ul ul {
-      margin-left: 20px;
-    }
-  </style>
+<style>
+  .bg-light {
+    background-color: #f8f9fa !important;
+  }
+
+  .nav-pills .nav-link {
+    border-radius: 0;
+  }
+
+  .nav-pills .nav-link:hover {
+    background-color: #e9ecef;
+  }
+
+  .nav .nav-item .nav-link {
+    padding-left: 1.5rem;
+  }
+
+  .nav .nav-item .nav-link:hover {
+    color: #0d6efd;
+  }
+</style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
   <nav>
@@ -33,5 +36,32 @@
   <main>
     {{ content }}
   </main>
+
+  <script>
+    // Obter a URL atual
+    const currentUrl = window.location.pathname;
+
+    // Dados de navegação (substitua por uma variável gerada dinamicamente pelo Jekyll)
+    const navigation = {{ site.data.navigation | jsonify }};
+
+    // Função para encontrar o primeiro filho de um menu principal
+    function findFirstChildUrl(menu) {
+      if (menu.children && menu.children.length > 0) {
+        return menu.children[0].url;
+      }
+      return null;
+    }
+
+    // Verificar se a URL atual corresponde a um menu principal
+    navigation.forEach(menu => {
+      if (menu.url === currentUrl) {
+        const firstChildUrl = findFirstChildUrl(menu);
+        if (firstChildUrl) {
+          // Redirecionar para o primeiro menu filho
+          window.location.href = firstChildUrl;
+        }
+      }
+    });
+  </script>
 </body>
 </html>

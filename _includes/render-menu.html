@@ -1,10 +1,20 @@
-{% for item in include.menu %}
-  <li>
-    <a href="{{ site.baseurl }}{{ item.url }}">{{ item.title }}</a>
-    {% if item.children %}
-      <ul>
-        {% include render-menu.html menu=item.children %}
-      </ul>
-    {% endif %}
-  </li>
-{% endfor %}
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px; height: 100vh;">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+    <span class="fs-4">Menu</span>
+  </a>
+  <hr>
+  <ul class="nav nav-pills flex-column mb-auto">
+    {% for item in include.menu %}
+      <li class="nav-item">
+        <a href="{{ site.baseurl }}{{ item.url }}" class="nav-link link-dark">
+          {{ item.title }}
+        </a>
+        {% if item.children %}
+          <ul class="nav flex-column ms-3">
+            {% include render-menu.html menu=item.children %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</div>

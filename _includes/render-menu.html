@@ -15,7 +15,20 @@
           <div class="accordion-body p-0">
             {% if item.children %}
               <ul class="nav flex-column ms-3">
-                {% include render-menu.html menu=item.children %}
+                {% for child in item.children %}
+                  <li class="nav-item">
+                    <a href="{{ child.url }}" class="nav-link link-dark">{{ child.title }}</a>
+                    <!-- {% if child.children %}
+                      <ul class="nav flex-column ms-3">
+                        {% for subchild in child.children %}
+                          <li class="nav-item">
+                            <a href="{{ subchild.url }}" class="nav-link link-dark">{{ subchild.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %} -->
+                  </li>
+                {% endfor %}
               </ul>
             {% endif %}
           </div>

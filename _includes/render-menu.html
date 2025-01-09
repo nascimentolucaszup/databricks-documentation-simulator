@@ -7,7 +7,7 @@
     {% for item in include.menu %}
       <li class="nav-item">
         <a href="{{ site.baseurl }}{{ item.url }}" 
-           class="nav-link {% if page.url == item.url %}active{% else %}link-dark{% endif %}">
+           class="nav-link {% if page.url contains item.url %}active{% else %}link-dark{% endif %}">
           {{ item.title }}
         </a>
         {% if item.children %}
@@ -15,7 +15,7 @@
             {% for child in item.children %}
               <li class="nav-item">
                 <a href="{{ site.baseurl }}{{ child.url }}" 
-                   class="nav-link {% if page.url == child.url %}active{% else %}link-dark{% endif %}">
+                   class="nav-link {% if page.url contains child.url %}active{% else %}link-dark{% endif %}">
                   {{ child.title }}
                 </a>
                 {% if child.children %}
@@ -23,7 +23,7 @@
                     {% for subchild in child.children %}
                       <li class="nav-item">
                         <a href="{{ site.baseurl }}{{ subchild.url }}" 
-                           class="nav-link {% if page.url == subchild.url %}active{% else %}link-dark{% endif %}">
+                           class="nav-link {% if page.url contains subchild.url %}active{% else %}link-dark{% endif %}">
                           {{ subchild.title }}
                         </a>
                       </li>

@@ -1,0 +1,46 @@
+.
+├── Carga e transformação de dados
+│   ├── cdc.md
+│   ├── flows.md
+│   ├── load.md
+│   ├── stateful-processing.md
+│   └── transform.md
+├── Configurar o pipeline
+│   ├── configure-compute.md
+│   ├── external-dependencies.md
+│   ├── hive-metastore.md
+│   ├── import-workspace-files.md
+│   ├── parameters.md
+│   ├── pipeline-mode.md
+│   ├── properties.md
+│   ├── serverless-dlt.md
+│   └── unity-catalog.md
+├── Delta Live Tables
+│   ├── configure-pipeline.md
+│   ├── develop-pipelines.md
+│   ├── expectations.md
+│   ├── language-references.md
+│   ├── load-and-transform.md
+│   ├── observability.md
+│   ├── privileges.md
+│   ├── tutorial-pipelines.md
+│   └── updates.md
+├── Desenvolver o pipeline
+│   ├── develop-locally.md
+│   ├── dlt-notebook-devex.md
+│   ├── python-dev.md
+│   ├── sql-dev.md
+│   └── testing.md
+├── Executar atualizações de pipeline
+│   └── workflows.md
+├── index
+│   └── index.md
+├── Monitoramento e observabilidade
+│   ├── dlt-query-history.md
+│   └── event-hooks.md
+├── output.txt
+└── Referências de idiomas
+    ├── python-ref.md
+    └── sql-ref.md
+
+9 directories, 35 files

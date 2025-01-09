@@ -1,0 +1,6 @@
+title: "Documentação"
+description: "Documentação oficial"
+baseurl: "/"
+theme: minima
+markdown: kramdown
+permalink: pretty
